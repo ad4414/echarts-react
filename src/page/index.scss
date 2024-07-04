@@ -1,0 +1,73 @@
+.btn-animate {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: #027efb;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .btn-animate__rotate2-out {
+    z-index: 1;
+    background-color: #90cf5b;
+  
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      width: 51%;
+      height: 100%;
+      transform: rotate(0);
+      transition: .35s ease-out;
+      background-color: #027efb;
+    }
+  
+    &::before {
+      left: 0;
+    }
+  
+    &::after {
+      right: 0;
+    }
+  
+    &:hover {
+      &::before, &::after {
+        opacity: 0;
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .background-style-7 {
+    position: fixed;
+    height: 1000px;
+    width: 100%;
+    background-image: url("https://css.bqrdh.com/images/background-style/mask_avatar.jpg")  ;
+    background-position: center center;
+    /* 背景图不平铺 */
+    background-repeat: no-repeat;
+    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
+    /* 设置背景颜色，背景图加载过程中会显示背景色 */
+    background-color: #464646;
+    image-rendering: -webkit-optimize-contrast;
+     opacity: 0.8;
+    z-index: -1;
+  }
+ 
+  .login{
+    position: fixed;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 300px;
+    width: 300px;
+     
+    z-index: 1;
+
+  }
