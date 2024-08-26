@@ -19,7 +19,7 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem('Polyline', '/polyline', <PieChartOutlined />),
+  getItem('Polyline', '/', <PieChartOutlined />),
   getItem('gradient', '/gradient', <DesktopOutlined />),
   getItem('User', 'sub1', <UserOutlined />, [
     getItem('Dotted', '/dotted'),
@@ -28,7 +28,7 @@ const items = [
     getItem('pieNet','/pienet')
   ]),
   getItem('Team', 'sub2', <TeamOutlined />,
-   [getItem('Orthographic', '/orthographic'), getItem('gauge', '/Gauge')]),
+   [getItem('Orthographic', '/orthographic'), getItem('gauge', '/Gauge'),getItem('flightGL','/flightGL')]),
    
 ];
 const EchartsLayout = () => {

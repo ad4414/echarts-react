@@ -189,8 +189,7 @@ useEffect(()=>{
       chartInstance.setOption(option)
 },[])
 return <div style={{ textAlign: "center" }}>
- 
-<div ref={chartRef} style={{ height: "800px",width:'1500px',display:'flex',justifyContent:'center' }}></div>
+<div ref={chartRef} className="gradient" style={{ height:950,width:'1600px',display:'flex',justifyContent:'center' }}></div>
 </div>
 }
 export default Gradient

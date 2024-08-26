@@ -1,4 +1,5 @@
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
+ 
 import Login from "../page/login";
 import EchartsLayout from "../Layout";
 import Polyline from "../page/DataGraph/first";
@@ -8,9 +9,11 @@ import Aqi from "../page/DataGraph/third/aqi";
 import Flights from "../page/DataGraph/third/flights";
 import Orthographic from "../page/DataGraph/four/Orthographic";
 import Gauge from "../page/DataGraph/four/gauge";
-import AuthRoute from "./authRoute";
 import PieNet from "../page/DataGraph/four/pieNet";
-const router =createHashRouter([{
+import FlightGL from "../page/DataGraph/four/flightGL";
+import { useSelector } from "react-redux";
+import axios from "axios";
+const router =createBrowserRouter([{
     path:'/login',
     element: <Login/> 
 },
@@ -18,7 +21,7 @@ const router =createHashRouter([{
     path:'/',
     element: <EchartsLayout/> ,
     children:[{
-        path:'/polyline',
+        index:true,
         element:<Polyline/>
     },{
         path:'/gradient',
@@ -41,6 +44,12 @@ const router =createHashRouter([{
     },{
         path:'/pieNet',
         element:<PieNet/>
+    },{
+        path:'/flightGL',
+        element:<FlightGL/>,
+        loader:async ()=>{
+             return axios.get('/data-gl/asset/data/flights.json')
+        }
     }
 ]
 }

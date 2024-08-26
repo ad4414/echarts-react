@@ -106,7 +106,7 @@ const Dotted=()=>{
 return <div>
 <div style={{ textAlign: "center" }}>
       
-      <div ref={chartRef} style={{ height: "900px",width:'1500px',display:'flex',justifyContent:'center' }}></div>
+      <div ref={chartRef} style={{ height:950,width:1550,display:'flex',justifyContent:'center' }}></div>
     </div>
 </div>
 }

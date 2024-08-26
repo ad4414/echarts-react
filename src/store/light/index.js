@@ -8,7 +8,8 @@ const LoginStore=createSlice({
 name:'login',
 initialState:{
     token:getToken() || '',
-    LoginData:[]
+    LoginData:[],
+     
 },
 reducers:{
     setToken (state, action) {
@@ -18,6 +19,7 @@ reducers:{
     setLogin(state,action){
         state.LoginData=action.payload
     },
+ 
     clearUserInfo (state) {
         state.token = ''
         state.LoginData = []
@@ -25,7 +27,7 @@ reducers:{
       }
 }
 })
-const {setLogin,setToken}=LoginStore.actions
+const {setLogin,setToken,setFlightGL}=LoginStore.actions
 const reducer=LoginStore.reducer
 const fetchToken=(loginForm)=>{
     return async (dispatch)=>{
@@ -40,8 +42,8 @@ const fData=()=>{
         dispatch(setLogin(res.data))
         
     }
-}
+} 
+ 
 
-
-export {fData,fetchToken}
+export {fData,fetchToken }
 export default reducer

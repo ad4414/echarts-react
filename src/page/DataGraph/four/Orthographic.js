@@ -66,7 +66,7 @@ chartInit.setOption(option)
     },[])
     return <div style={{ textAlign: "center" }}>
    
-    <div ref={chartRef} style={{ height: "850px",width:'1500px',display:'flex',justifyContent:'center' }}></div>
+    <div ref={chartRef} style={{ height: "920px",width:'1550px',display:'flex',justifyContent:'center' }}></div>
   </div>
 }
 export default Orthographic

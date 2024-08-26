@@ -955,7 +955,7 @@ var option = {
     },[])
     return <div style={{ textAlign: "center" }}>
    
-    <div ref={chartRef} style={{ height: "900px",width:'1500px',display:'flex',justifyContent:'center' }}></div>
+    <div ref={chartRef} style={{ height: 920,width:'1550px',display:'flex',justifyContent:'center' }}></div>
   </div>
 }
 

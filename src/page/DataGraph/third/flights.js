@@ -589,7 +589,7 @@ const Flights=()=>{
    
     return <div style={{ textAlign: "center" }}>
     
-    <div ref={chartRef} style={{ height: "1000px",width:'1700px',display:'flex',justifyContent:'center' }}></div>
+    <div ref={chartRef} style={{ height: 920,width:1550,display:'flex',justifyContent:'center' }}></div>
   </div>
 }
 export default Flights

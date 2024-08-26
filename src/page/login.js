@@ -22,7 +22,7 @@ await dispatch(fetchToken(values))
  /* if( JSON.stringify(arr)===JSON.stringify(loginData)){
   navigate('/polyline')
  } */
- navigate('/polyline')
+ navigate('/')
 };
 return <div className='background-style-7'>
         <div className="login" >

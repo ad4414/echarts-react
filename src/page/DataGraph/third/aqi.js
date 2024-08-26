@@ -220,9 +220,8 @@ const option = {
   };
   chartInstance.setOption(option)
 },[])
-      return  <div style={{ textAlign: "center" }}>
-      
-      <div ref={chartRef} style={{ height: "800px",width:'1500px',display:'flex',justifyContent:'center' }}></div>
+      return  <div style={{ textAlign: "center" }}> 
+      <div ref={chartRef} style={{ height:950,width:1550,display:'flex',justifyContent:'center' }}></div>
     </div>
 }
 export default Aqi
