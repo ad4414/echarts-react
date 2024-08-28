@@ -5,6 +5,7 @@ import {
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
+  AppleFilled
 } from '@ant-design/icons';
 import './index.scss'
 import {   Layout, Menu,Popconfirm } from 'antd';
@@ -29,7 +30,7 @@ const items = [
   ]),
   getItem('Team', 'sub2', <TeamOutlined />,
    [getItem('Orthographic', '/orthographic'), getItem('gauge', '/Gauge'),getItem('flightGL','/flightGL')]),
-   
+   getItem('3D','/3d',<AppleFilled />)
 ];
 const EchartsLayout = () => {
   const [collapsed, setCollapsed] = useState(false);

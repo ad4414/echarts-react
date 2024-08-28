@@ -27,7 +27,7 @@ reducers:{
       }
 }
 })
-const {setLogin,setToken,setFlightGL}=LoginStore.actions
+const {setLogin,setToken}=LoginStore.actions
 const reducer=LoginStore.reducer
 const fetchToken=(loginForm)=>{
     return async (dispatch)=>{

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import {createHashRouter}  from "react-router-dom";
  
 import Login from "../page/login";
 import EchartsLayout from "../Layout";
@@ -11,9 +11,9 @@ import Orthographic from "../page/DataGraph/four/Orthographic";
 import Gauge from "../page/DataGraph/four/gauge";
 import PieNet from "../page/DataGraph/four/pieNet";
 import FlightGL from "../page/DataGraph/four/flightGL";
-import { useSelector } from "react-redux";
 import axios from "axios";
-const router =createBrowserRouter([{
+import Three3D from "../page/DataGraph/3d/t3d";
+const router =createHashRouter([{
     path:'/login',
     element: <Login/> 
 },
@@ -50,6 +50,9 @@ const router =createBrowserRouter([{
         loader:async ()=>{
              return axios.get('/data-gl/asset/data/flights.json')
         }
+    },{
+        path:'/3d',
+        element:<Three3D/>
     }
 ]
 }

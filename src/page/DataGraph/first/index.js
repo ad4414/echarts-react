@@ -1,7 +1,12 @@
 import { useEffect, useRef } from "react"
 import * as echarts from "echarts";
+import { useLocation } from "react-router-dom";
 const Polyline=()=>{
     const chartRef=useRef(null)
+    const location=useLocation()
+    let url=location.pathname+location.search+location.hash
+    console.log(url);
+    
     useEffect(()=>{
         let chartInstance = echarts.init(chartRef.current);
        const option = {

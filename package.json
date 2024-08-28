@@ -1,8 +1,8 @@
 {
   "name": "echartsapp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "proxy":"https://echarts.js.cn/examples",
+  "proxy": "https://echarts.js.cn/examples",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/jest-dom": "^5.17.0",
@@ -21,6 +21,8 @@
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "sass": "^1.77.6",
+    "source-map-explorer": "^2.5.3",
+    "three": "^0.167.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -28,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server src/data/dataLogin.json --port 3005"
+    "server": "json-server ./src/data/dataLogin.json --port 3005",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": [

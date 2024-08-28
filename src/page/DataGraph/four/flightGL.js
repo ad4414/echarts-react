@@ -1,9 +1,14 @@
 import { useEffect, useRef } from "react"
 import * as echarts from 'echarts';
 import { useLoaderData } from "react-router-dom";
- 
+import { useLocation } from "react-router-dom";
 const  FlightGL=()=>{
     const chartRef=useRef(null)
+    const location=useLocation()
+    console.log(location);
+    
+    let url=location.pathname+location.search+location.hash
+    console.log(url);
   const data=useLoaderData()
  let flightGLData=data.data
  console.log(data);
@@ -130,7 +135,7 @@ const  FlightGL=()=>{
     })
     return <div style={{ textAlign: "center" }}>
     
-    <div ref={chartRef} style={{ height: "920px",width:'1550px',display:'flex',justifyContent:'center' }}></div>
+    <div ref={chartRef} style={{ height: "920px",width:'92%',display:'flex',justifyContent:'center' }}></div>
   </div>
 }
 
