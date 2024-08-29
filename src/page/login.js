@@ -1,27 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {  Checkbox, Form, Input } from 'antd';
 import './index.scss'
-import {useSelector,useDispatch} from "react-redux"
-import { fData, fetchToken } from '../store/light';
+import {useDispatch} from "react-redux"
 import { useNavigate } from 'react-router-dom';
+import { fData } from '../store/light';
 const Login = () => {
- 
+ const dispatch=useDispatch()
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
-const dispatch=useDispatch()
-//const loginData=useSelector(state=>state.login.LoginData)
-useEffect(()=>{
-dispatch(fData())
-},[dispatch])
  const navigate=useNavigate()
 const onFinish =async (values) => {
-  const {username,password}=values
-  let arr=[{"username":username,"password":password}]
-await dispatch(fetchToken(values))
- /* if( JSON.stringify(arr)===JSON.stringify(loginData)){
-  navigate('/polyline')
- } */
+  
+ await dispatch(fData(values))
  navigate('/')
 };
 return <div className='background-style-7'>
@@ -37,11 +28,9 @@ return <div className='background-style-7'>
     style={{
       maxWidth: 600,
     }}
-    initialValues={{
-      remember: true,
-    }}
     onFinish={onFinish}
     onFinishFailed={onFinishFailed}
+    validateTrigger={['onBlur']}
   >
     <Form.Item
       label="Username"
@@ -51,6 +40,7 @@ return <div className='background-style-7'>
           required: true,
           message: 'Please input your username!',
         },
+   
       ]}
     >
       <Input />
@@ -68,8 +58,7 @@ return <div className='background-style-7'>
     >
       <Input.Password />
     </Form.Item>
-
-    <Form.Item
+   {/*  <Form.Item
       name="remember"
       valuePropName="checked"
       wrapperCol={{
@@ -78,8 +67,7 @@ return <div className='background-style-7'>
       }}
     >
       <Checkbox>授权即同意服务协议和隐私保护指引</Checkbox>
-    </Form.Item>
-
+    </Form.Item> */}
     <Form.Item
       wrapperCol={{
         offset: 8,

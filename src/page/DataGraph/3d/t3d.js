@@ -37,13 +37,13 @@ const Three3D=()=>{
         const ambient = new THREE.AmbientLight(0xffffff, 4);
         scene.add(ambient);
         // AxesHelper：辅助观察的坐标系
-        const axesHelper = new THREE.AxesHelper(250);
+        const axesHelper = new THREE.AxesHelper(350);
         scene.add(axesHelper);
         const width = window.innerWidth; //宽度
         const height = window.innerHeight; //高度
         // 相机
         const camera = new THREE.PerspectiveCamera(30, width / height, 1, 3000);
-        camera.position.set(492, 323, 385);
+        camera.position.set(592, 423, 585);
         camera.lookAt(80, 80, 80);
         
         // WebGL渲染器
@@ -59,14 +59,12 @@ const Three3D=()=>{
         //three.js执行渲染命令会输出一个canvas画布(HTML元素)，你可以插入到web页面中
         stageRef.current.appendChild(renderer.domElement);
         function render() {
-    
- 
             renderer.render(scene, camera); //执行渲染操作
-            mesh[0].rotateX(-4)
-            mesh[1].rotateZ(4);//每次绕轴旋转的弧度
-            mesh[2].rotateX(-4)
-            mesh[3].rotateX(4)
-            mesh[4].rotateZ(-4)
+            mesh[0].rotateX(-3.14)
+            mesh[1].rotateZ(3.14);//每次绕轴旋转的弧度
+            mesh[2].rotateX(-3.14)
+            mesh[3].rotateX(3.14)
+            mesh[4].rotateZ(-3.14)
             requestAnimationFrame(render);//请求再次执行渲染函数render，渲染下一帧
         }
         render();

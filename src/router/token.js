@@ -1,4 +1,4 @@
-const TOKENKEY = 'token_key'
+const TOKENKEY = 'logintoken_key'
 
 function setToken (token) {
   return localStorage.setItem(TOKENKEY, token)

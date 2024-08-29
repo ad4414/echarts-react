@@ -3,7 +3,6 @@ import reducer from "./light";
 const LoginReducer=configureStore({
     reducer:{
         login:reducer,
-       
     }
 })
 

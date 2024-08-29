@@ -1,5 +1,4 @@
 import {createHashRouter}  from "react-router-dom";
- 
 import Login from "../page/login";
 import EchartsLayout from "../Layout";
 import Polyline from "../page/DataGraph/first";
@@ -13,13 +12,14 @@ import PieNet from "../page/DataGraph/four/pieNet";
 import FlightGL from "../page/DataGraph/four/flightGL";
 import axios from "axios";
 import Three3D from "../page/DataGraph/3d/t3d";
+import AuthRoute from "./authRoute";
 const router =createHashRouter([{
     path:'/login',
     element: <Login/> 
 },
 {
     path:'/',
-    element: <EchartsLayout/> ,
+    element: <AuthRoute><EchartsLayout/></AuthRoute> ,
     children:[{
         index:true,
         element:<Polyline/>
@@ -48,7 +48,7 @@ const router =createHashRouter([{
         path:'/flightGL',
         element:<FlightGL/>,
         loader:async ()=>{
-             return axios.get('/data-gl/asset/data/flights.json')
+             return await axios.get('/data-gl/asset/data/flights.json')
         }
     },{
         path:'/3d',
