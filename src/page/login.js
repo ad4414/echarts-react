@@ -10,9 +10,9 @@ const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
  const navigate=useNavigate()
-const onFinish =async (values) => {
-  
- await dispatch(fData(values))
+const onFinish = (values) => {
+ console.log(values);
+ dispatch(fData(values))
  navigate('/')
 };
 return <div className='background-style-7'>
@@ -34,7 +34,7 @@ return <div className='background-style-7'>
   >
     <Form.Item
       label="Username"
-      name="username"
+      name="mobile"
       rules={[
         {
           required: true,
@@ -48,7 +48,7 @@ return <div className='background-style-7'>
 
     <Form.Item
       label="Password"
-      name="password"
+      name="code"
       rules={[
         {
           required: true,

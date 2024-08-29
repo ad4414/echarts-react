@@ -13,13 +13,14 @@ import FlightGL from "../page/DataGraph/four/flightGL";
 import axios from "axios";
 import Three3D from "../page/DataGraph/3d/t3d";
 import AuthRoute from "./authRoute";
+import PrivateRoute from "../privateRoute/privateRoute";
 const router =createHashRouter([{
     path:'/login',
     element: <Login/> 
 },
 {
     path:'/',
-    element: <AuthRoute><EchartsLayout/></AuthRoute> ,
+    element: <AuthRoute><EchartsLayout/> </AuthRoute>,
     children:[{
         index:true,
         element:<Polyline/>

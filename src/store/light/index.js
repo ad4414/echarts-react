@@ -27,9 +27,15 @@ const reducer=LoginStore.reducer
  
 const fData=(loginData)=>{
     return async (dispatch) => {
-        const res=await request.post('/authorizations',loginData)
-        console.log(res);
-        dispatch(setToken(res.data.token))
+        try {
+            // 可能会抛出错误的代码
+            const res= await request.post('/authorizations',loginData)
+            console.log(res);
+            dispatch(setToken(res.data.token))
+        } catch (error) {
+            console.error("Error caught: ", error);
+            // 处理错误，不显示在页面上
+        }
     }
 } 
  
