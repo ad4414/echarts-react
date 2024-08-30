@@ -1,4 +1,4 @@
-import {createHashRouter}  from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Login from "../page/login";
 import EchartsLayout from "../Layout";
 import Polyline from "../page/DataGraph/first";
@@ -14,50 +14,63 @@ import axios from "axios";
 import Three3D from "../page/DataGraph/3d/t3d";
 import AuthRoute from "./authRoute";
 import PrivateRoute from "../privateRoute/privateRoute";
-const router =createHashRouter([{
-    path:'/login',
-    element: <Login/> 
-},
-{
-    path:'/',
-    element: <AuthRoute><EchartsLayout/> </AuthRoute>,
-    children:[{
-        index:true,
-        element:<Polyline/>
-    },{
-        path:'/gradient',
-        element:<Gradient/>
-    },{
-    path:'/dotted',
-    element:<Dotted/>
-    },{
-     path:"/aqi",
-     element:<Aqi/>
-    },{
-        path:'/flight',
-        element:<Flights/>
-    },{
-        path:'/orthographic',
-        element:<Orthographic/>
-    },{
-        path:"/gauge",
-        element:<Gauge/>
-    },{
-        path:'/pieNet',
-        element:<PieNet/>
-    },{
-        path:'/flightGL',
-        element:<FlightGL/>,
-        loader:async ()=>{
-             return await axios.get('/data-gl/asset/data/flights.json')
-        }
-    },{
-        path:'/3d',
-        element:<Three3D/>
-    }
-]
-}
-]
-
-)
-export default router
+const router = createHashRouter([
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/",
+    element: (
+      <AuthRoute>
+        <EchartsLayout />{" "}
+      </AuthRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Polyline />,
+      },
+      {
+        path: "/gradient",
+        element: <Gradient />,
+      },
+      {
+        path: "/dotted",
+        element: <Dotted />,
+      },
+      {
+        path: "/aqi",
+        element: <Aqi />,
+      },
+      {
+        path: "/flight",
+        element: <Flights />,
+      },
+      {
+        path: "/orthographic",
+        element: <Orthographic />,
+      },
+      {
+        path: "/gauge",
+        element: <Gauge />,
+      },
+      {
+        path: "/pieNet",
+        element: <PieNet />,
+      },
+      {
+        path: "/flightGL",
+        element: <FlightGL />,
+        loader: async () => {
+          return await axios.get("/data-gl/asset/data/flights.json");
+        },
+      },
+      {
+        path: "/3d",
+        element: <Three3D />,
+      },
+    ],
+  },
+]);
+export default router;

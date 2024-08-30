@@ -1,19 +1,15 @@
-const TOKENKEY = 'logintoken_key'
+const TOKENKEY = "logintoken_key";
 
-function setToken (token) {
-  return localStorage.setItem(TOKENKEY, token)
+function setToken(token) {
+  return localStorage.setItem(TOKENKEY, token);
 }
 
-function getToken () {
-  return localStorage.getItem(TOKENKEY)
+function getToken() {
+  return localStorage.getItem(TOKENKEY);
 }
 
-function removeToken () {
-  return localStorage.removeItem(TOKENKEY)
+function removeToken() {
+  return localStorage.removeItem(TOKENKEY);
 }
 
-export {
-  setToken,
-  getToken,
-  removeToken
-}
+export { setToken, getToken, removeToken };
