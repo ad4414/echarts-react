@@ -32,21 +32,17 @@ const items = [
     getItem("Orthographic", "/orthographic"),
     getItem("gauge", "/Gauge"),
     getItem("flightGL", "/flightGL"),
+    getItem("drawFunc","/drawFunc")
   ]),
   getItem("3D", "/3d", <AppleFilled />),
 ];
 const EchartsLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
-
   const navigate = useNavigate();
   const handClick = (e) => {
-    console.log(e.key);
-
     navigate(e.key);
   };
   const handLogin = (e) => {
-    console.log(e.target.textContent);
-
     navigate("/login");
   };
   return (

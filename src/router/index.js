@@ -13,7 +13,7 @@ import FlightGL from "../page/DataGraph/four/flightGL";
 import axios from "axios";
 import Three3D from "../page/DataGraph/3d/t3d";
 import AuthRoute from "./authRoute";
-import PrivateRoute from "../privateRoute/privateRoute";
+import DrawFunc from "../page/DataGraph/third/function";
 const router = createHashRouter([
   {
     path: "/login",
@@ -70,6 +70,10 @@ const router = createHashRouter([
         path: "/3d",
         element: <Three3D />,
       },
+      {
+        path:"/drawFunc",
+        element: <DrawFunc/>
+      }
     ],
   },
 ]);

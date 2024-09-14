@@ -1,6 +1,6 @@
 {
   "name": "echartsapp",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "proxy": "https://echarts.js.cn/examples",
   "dependencies": {

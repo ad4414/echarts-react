@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 import {
   setToken as _setToken,
   getToken,

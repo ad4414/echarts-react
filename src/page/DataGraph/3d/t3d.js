@@ -10,7 +10,7 @@ const Three3D = () => {
     let geometry = [];
     const scene = new THREE.Scene();
     // 模型对象
-    for (let i = 0; i <= 8; i++) {
+    for (let i = 0; i <= 3; i++) {
       geometry[i] = new THREE.CylinderGeometry(30, 30, 30);
       const material = new THREE.MeshLambertMaterial({
         color: "red",
@@ -18,9 +18,9 @@ const Three3D = () => {
       mesh[i] = new THREE.Mesh(geometry[i], material);
     
       
-      if (i % 3 === 0 ) {
+      if (i % 2 === 0 ) {
         mesh[i].position.set(50 * i, 0, 0);
-      } else if (i % 3 === 1) {
+      } else if (i % 2 === 1) {
         mesh[i].position.set(0, i * 50, 0);
       } else {
         mesh[i].position.set(0, 0, i * 50);
@@ -63,23 +63,19 @@ const Three3D = () => {
     stageRef.current.appendChild(renderer.domElement);
     function render() {
       renderer.render(scene, camera); //执行渲染操作
-      for (let i = 0; i <= 8; i++) {
-        if (i % 3 === 0) {
-            console.log(mesh[i]);
-            
+      for (let i = 0; i <= 3; i++) {
+        if (i % 2 === 0) {
           mesh[i].rotateX(3);
-        } else if (i % 3 === 1) {
+        } else if (i % 2 === 1) {
           mesh[i].rotateY(3);
         } else {
           mesh[i].rotateZ(3);
         }
-
         requestAnimationFrame(render); //请求再次执行渲染函数render，渲染下一帧
       }
     }
     render();
   });
-
   return <div id="stage" ref={stageRef}></div>;
 };
 export default Three3D;

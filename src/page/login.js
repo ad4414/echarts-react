@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, Form, Input } from "antd";
+import {Form, Input } from "antd";
 import "./index.scss";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
